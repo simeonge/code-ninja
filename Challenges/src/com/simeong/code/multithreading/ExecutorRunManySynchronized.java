@@ -9,15 +9,8 @@ public class ExecutorRunManySynchronized {
 	public static class Doubl {
 		private int num = 0;
 		
-		public int doubleThatShit() {
-//			try {
-//				Thread.sleep(10);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
-			
+		public int doubleThatShit() {			
 			num++;
-			
 			return num;
 		}
 		
@@ -35,14 +28,8 @@ public class ExecutorRunManySynchronized {
 
 		@Override
 		public void run() {
-			// d.reset();
-			
 			for (int i = 0; i < 80000000; i++) {
-				int r = d.doubleThatShit();
-				
-//				if (r != i + 1) {
-//					System.out.println("WRONG!");
-//				}
+				d.doubleThatShit();
 			}
 			
 			System.out.println(d.num);
